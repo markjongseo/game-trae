@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>격투 게임</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- 플레이어 및 체력 바 표시 영역 -->
+        <div class="player-stats">
+            <!-- 플레이어 1 체력 -->
+            <div class="health-bar-container player1-health-container">
+                <div id="player1Health" class="health-bar"></div>
+            </div>
+            <!-- 타이머 -->
+            <div id="timer" class="timer">60</div>
+            <!-- 플레이어 2 체력 -->
+            <div class="health-bar-container player2-health-container">
+                <div id="player2Health" class="health-bar"></div>
+            </div>
+        </div>
+        <div id="resultDisplay" class="result-display"></div>
+        <!-- 플레이어 캐릭터 영역 -->
+        <div class="arena">
+            <div id="player1" class="player"></div>
+            <div id="player2" class="player"></div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Mobile Joysticks (Hidden by default, shown via CSS media query) -->
+    <div class="mobile-controls">
+        <div id="player1Joystick" class="joystick"></div>
+        <div id="player2Joystick" class="joystick"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

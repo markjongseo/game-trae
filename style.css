@@ -1,0 +1,530 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #2c3e50; /* 어두운 배경색 */
+    font-family: Arial, sans-serif;}
+
+/* Mobile Controls */
+.mobile-controls {
+    display: none; /* Hide by default */
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 30;
+}
+
+.joystick {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    position: relative;
+    touch-action: none; /* Prevent default touch actions */
+}
+
+/* Show controls on mobile */
+@media (max-width: 768px) {
+    .mobile-controls {
+        display: flex; /* Show on mobile */
+    }
+}
+
+.game-container {
+    position: relative;
+    width: 95%; /* 게임 컨테이너 너비 (상대적) */
+    max-width: 800px; /* 최대 너비 제한 */
+    height: 80vh; /* 게임 컨테이너 높이 (상대적) */
+    max-height: 500px; /* 최대 높이 제한 */
+    background-color: #34495e; /* 게임 영역 배경색 */
+    border: 5px solid #ecf0f1; /* 테두리 */
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    overflow: hidden; /* 플레이어가 밖으로 나가지 않도록 */}
+
+/* Mobile Controls */
+.mobile-controls {
+    display: none; /* Hide by default */
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 30;
+}
+
+.joystick {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    position: relative;
+    touch-action: none; /* Prevent default touch actions */
+}
+
+/* Show controls on mobile */
+@media (max-width: 768px) {
+    .mobile-controls {
+        display: flex; /* Show on mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    .game-container {
+        width: 100%;
+        height: 100vh;
+        border: none;
+        box-shadow: none;
+    }
+
+    .player-stats {
+        padding: 5px 10px;
+        height: 40px;
+    }
+
+    .health-bar-container {
+        width: 45%;
+        height: 25px;
+    }
+
+    .timer {
+        font-size: 20px;
+        width: 40px;
+    }
+
+    .result-display {
+        font-size: 36px;
+    }
+
+    .arena {
+        height: calc(100% - 40px); /* player-stats 높이 조정 */
+    }
+
+    .player {
+        width: 40px; /* 플레이어 너비 조정 */
+        height: 80px; /* 플레이어 높이 조정 */
+    }
+
+    #player1 {
+        left: 50px; /* 플레이어 1 초기 위치 조정 */
+    }
+
+    #player2 {
+        right: 50px; /* 플레이어 2 초기 위치 조정 */
+    }}
+
+/* Mobile Controls */
+.mobile-controls {
+    display: none; /* Hide by default */
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 30;
+}
+
+.joystick {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    position: relative;
+    touch-action: none; /* Prevent default touch actions */
+}
+
+/* Show controls on mobile */
+@media (max-width: 768px) {
+    .mobile-controls {
+        display: flex; /* Show on mobile */
+    }
+}
+
+.player-stats {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 50px;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 10; /* 플레이어 위에 표시되도록 */}
+
+/* Mobile Controls */
+.mobile-controls {
+    display: none; /* Hide by default */
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 30;
+}
+
+.joystick {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    position: relative;
+    touch-action: none; /* Prevent default touch actions */
+}
+
+/* Show controls on mobile */
+@media (max-width: 768px) {
+    .mobile-controls {
+        display: flex; /* Show on mobile */
+    }
+}
+
+.health-bar-container {
+    width: 40%; /* 체력 바 컨테이너 너비 */
+    height: 30px;
+    background-color: #7f8c8d; /* 체력 바 배경 */
+    border: 2px solid #ecf0f1;
+    border-radius: 5px;
+    overflow: hidden;}
+
+/* Mobile Controls */
+.mobile-controls {
+    display: none; /* Hide by default */
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 30;
+}
+
+.joystick {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    position: relative;
+    touch-action: none; /* Prevent default touch actions */
+}
+
+/* Show controls on mobile */
+@media (max-width: 768px) {
+    .mobile-controls {
+        display: flex; /* Show on mobile */
+    }
+}
+
+.health-bar {
+    height: 100%;
+    width: 100%; /* 초기 체력은 100% */
+    transition: width 0.5s ease-in-out; /* 체력 변화 애니메이션 */}
+
+/* Mobile Controls */
+.mobile-controls {
+    display: none; /* Hide by default */
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 30;
+}
+
+.joystick {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    position: relative;
+    touch-action: none; /* Prevent default touch actions */
+}
+
+/* Show controls on mobile */
+@media (max-width: 768px) {
+    .mobile-controls {
+        display: flex; /* Show on mobile */
+    }
+}
+
+/* 플레이어 1 체력 바 색상 */
+.player1-health-container .health-bar {
+    background-color: #e74c3c; /* 빨간색 계열 */
+    float: left; /* 왼쪽 정렬 */}
+
+/* Mobile Controls */
+.mobile-controls {
+    display: none; /* Hide by default */
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 30;
+}
+
+.joystick {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    position: relative;
+    touch-action: none; /* Prevent default touch actions */
+}
+
+/* Show controls on mobile */
+@media (max-width: 768px) {
+    .mobile-controls {
+        display: flex; /* Show on mobile */
+    }
+}
+
+/* 플레이어 2 체력 바 색상 */
+.player2-health-container .health-bar {
+    background-color: #3498db; /* 파란색 계열 */
+    float: right; /* 오른쪽 정렬 (CSS 수정 필요 시 JavaScript에서 처리) */}
+
+/* Mobile Controls */
+.mobile-controls {
+    display: none; /* Hide by default */
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 30;
+}
+
+.joystick {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    position: relative;
+    touch-action: none; /* Prevent default touch actions */
+}
+
+/* Show controls on mobile */
+@media (max-width: 768px) {
+    .mobile-controls {
+        display: flex; /* Show on mobile */
+    }
+}
+
+
+.timer {
+    font-size: 24px;
+    color: #ecf0f1; /* 흰색 계열 */
+    font-weight: bold;
+    width: 50px;
+    text-align: center;}
+
+/* Mobile Controls */
+.mobile-controls {
+    display: none; /* Hide by default */
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 30;
+}
+
+.joystick {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    position: relative;
+    touch-action: none; /* Prevent default touch actions */
+}
+
+/* Show controls on mobile */
+@media (max-width: 768px) {
+    .mobile-controls {
+        display: flex; /* Show on mobile */
+    }
+}
+
+.result-display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 20; /* 최상단에 표시 */
+    display: none; /* 초기에는 숨김 */}
+
+/* Mobile Controls */
+.mobile-controls {
+    display: none; /* Hide by default */
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 30;
+}
+
+.joystick {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    position: relative;
+    touch-action: none; /* Prevent default touch actions */
+}
+
+/* Show controls on mobile */
+@media (max-width: 768px) {
+    .mobile-controls {
+        display: flex; /* Show on mobile */
+    }
+}
+
+.arena {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 70px); /* player-stats 높이 제외 */
+    background-image: url('https://via.placeholder.com/800x430/556B2F/FFFFFF?text=Game+Background'); /* 임시 배경 이미지 */
+    background-size: cover;
+    background-position: center bottom;}
+
+/* Mobile Controls */
+.mobile-controls {
+    display: none; /* Hide by default */
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 30;
+}
+
+.joystick {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    position: relative;
+    touch-action: none; /* Prevent default touch actions */
+}
+
+/* Show controls on mobile */
+@media (max-width: 768px) {
+    .mobile-controls {
+        display: flex; /* Show on mobile */
+    }
+}
+
+.player {
+    position: absolute;
+    width: 50px; /* 플레이어 너비 */
+    height: 100px; /* 플레이어 높이 */
+    bottom: 0; /* 바닥에 위치 */}
+
+/* Mobile Controls */
+.mobile-controls {
+    display: none; /* Hide by default */
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 30;
+}
+
+.joystick {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    position: relative;
+    touch-action: none; /* Prevent default touch actions */
+}
+
+/* Show controls on mobile */
+@media (max-width: 768px) {
+    .mobile-controls {
+        display: flex; /* Show on mobile */
+    }
+}
+
+#player1 {
+    background-color: red; /* 플레이어 1 색상 */
+    left: 100px; /* 플레이어 1 초기 위치 */}
+
+/* Mobile Controls */
+.mobile-controls {
+    display: none; /* Hide by default */
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 30;
+}
+
+.joystick {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    position: relative;
+    touch-action: none; /* Prevent default touch actions */
+}
+
+/* Show controls on mobile */
+@media (max-width: 768px) {
+    .mobile-controls {
+        display: flex; /* Show on mobile */
+    }
+}
+
+#player2 {
+    background-color: blue; /* 플레이어 2 색상 */
+    right: 100px; /* 플레이어 2 초기 위치 */}
+
+/* Mobile Controls */
+.mobile-controls {
+    display: none; /* Hide by default */
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 30;
+}
+
+.joystick {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    position: relative;
+    touch-action: none; /* Prevent default touch actions */
+}
+
+/* Show controls on mobile */
+@media (max-width: 768px) {
+    .mobile-controls {
+        display: flex; /* Show on mobile */
+    }
+}
